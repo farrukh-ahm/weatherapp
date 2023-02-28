@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,600;1,700;1,800&family=Tilt+Neon&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    block-size: 100vh;
+    inline-size: 100vw;
+}
+
+:root{
+    --temp-font: 'EB Garamond', serif;
+    --temp-color: #B50179;
+    --body-font: 'Tilt Neon', cursive;
+    --body-color: linear-gradient(
+        to right, #b7e1e5, #aadfe3, 
+        #9cdee1, #8ddcde, #7edada, 
+        #75dcdb, #6cdddb, #62dfdc, 
+        #5de5e1, #58ece5, #53f2ea, 
+        #4df9ee);
+    --container-color: linear-gradient(
+        to right bottom, #9d9da4, #a2a2a9, 
+        #a7a8af, #acadb4, #b1b3ba, 
+        #b5b8bf, #b8bec4, #bcc3c9, 
+        #bfcacf, #c3d0d4, #c7d7d8, 
+        #ccdddc);
+    --text-color: ##A93800;
+}
+
+body{
+    background-image: url(/img.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: var(--body-font);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,h2,h3,h4,h5,h6{
+    text-transform: uppercase;
+    color: var(--temp-color);
+    font-family: var(--temp-font);
+}
+
+/* -------------- FLEX --------------- */
+.flex-wrapper{
+    display: flex;
+    --gap: 1rem;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+
+/* ----------------------------- */
+
+#body-wrapper{
+    margin: auto;
+    inline-size: 100%;
+    --gap: 2rem;
+    border-radius: 10px;
+    background: rgba(211, 211, 211, 0.4);
+    backdrop-filter: blur(10px);
+    /* background-color: yellowgreen; */
+}
+
+@media (min-width: 500px){
+    #body-wrapper{
+        inline-size: 50%;
+    }
+}
+
+/* @media (min-width: 800px){
+    #body-wrapper{
+        inline-size: 50%;
+    }
+} */
+
+#time-location{
+    position: relative;
+    margin-block-start: 1em;
+}
+
+#location{
+    position: absolute;
+    left: 5%;
+    top: 0;
+    /* background-color: wheat; */
+}
+
+#time{
+    position: absolute;
+    right: 5%;
+    top: 0;
+    /* background-color: violet; */
+}
+
+#container{
+    block-size: 30rem;
+    inline-size: 100%;
+    /* border-radius: 10px;
+    background: rgba(211, 211, 211, 0.4);
+    backdrop-filter: blur(10px); */
+}
