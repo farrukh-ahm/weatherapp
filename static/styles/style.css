@@ -43,7 +43,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: var(--temp-color);
     font-family: var(--temp-font);
 }
@@ -53,7 +53,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     --gap: 1rem;
     justify-content: center;
-    gap: var(--gap);
+    gap: var(--gap, 1rem);
 }
 
 .flex-col{
@@ -75,7 +75,7 @@ h1,h2,h3,h4,h5,h6{
 
 @media (min-width: 500px){
     #body-wrapper{
-        inline-size: 50%;
+        inline-size: 30rem;
     }
 }
 
@@ -105,9 +105,45 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #container{
-    block-size: 30rem;
+    block-size: 25rem;
     inline-size: 100%;
+    --gap: none;
+    /* background-color: var(--temp-color); */
     /* border-radius: 10px;
     background: rgba(211, 211, 211, 0.4);
     backdrop-filter: blur(10px); */
+}
+
+/* ----------TEMPERATURE CONDITION------------ */
+
+#temp-container{
+    margin: 10px auto;
+    text-align: center;
+}
+
+#temp{
+    font-size: 5em;
+}
+
+#condition{
+    font-size: 1.5em;
+}
+
+
+/* -----------------FEELS/WIND-------------------- */
+
+#feels-wind{
+    margin: auto;
+    /* background-color: yellowgreen; */
+    --gap: 5em;
+    font-size: 1.2em;
+}
+
+/* --------------------MAX/MIN---------------------- */
+
+#max-min{
+    margin: auto;
+    --gap: 4em;
+    font-size: 1.2em;
+    /* background-color: yellow; */
 }
