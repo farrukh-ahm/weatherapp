@@ -43,7 +43,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     color: var(--temp-color);
     font-family: var(--temp-font);
 }
@@ -141,7 +141,7 @@ h1,h2,h3,h4,h5,h6{
 #feels-wind{
     margin: auto;
     /* background-color: yellowgreen; */
-    --gap: 5em;
+    --gap: clamp(4em, 3em, 2em);
     font-size: 1.2em;
 }
 
