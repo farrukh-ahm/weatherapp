@@ -1,6 +1,3 @@
-import {KEY} from "../../secrets.js"
-
-
 document.addEventListener("DOMContentLoaded", ()=>{
 
     initiatePosition()
@@ -27,6 +24,9 @@ const getPosition = (location) =>{
     console.log(lat, long)
     return (lat, long)
 }
+
+
+
 
 const errorCode = (error) => {
     console.log(error)
