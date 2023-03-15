@@ -1,3 +1,0 @@
-const keys = {
-    KEY: "xyz",
-}
