@@ -13,7 +13,8 @@ html, body {
 
 :root{
     --temp-font: 'EB Garamond', serif;
-    --temp-color: #B50179;
+    /* --temp-color: #B50179; */
+    --temp-color: white;
     --body-font: 'Tilt Neon', cursive;
     --body-color: linear-gradient(
         to right, #b7e1e5, #aadfe3, 
@@ -27,7 +28,10 @@ html, body {
         #b5b8bf, #b8bec4, #bcc3c9, 
         #bfcacf, #c3d0d4, #c7d7d8, 
         #ccdddc);
-    --text-color: ##A93800;
+    /* --text-color: ##A93800; */
+    --text-color: white;
+
+    --body-wrapper: rgba(107, 105, 99, 0.2);
 }
 
 body{
@@ -68,8 +72,11 @@ h1,h2,h3,h4,h5,h6{
     inline-size: 100%;
     --gap: 2rem;
     border-radius: 10px;
-    background: rgba(211, 211, 211, 0.4);
-    backdrop-filter: blur(10px);
+    /* background: rgba(211, 211, 211, 0.4); */
+    background: var(--body-wrapper);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 5px #cbcbc8, inset 0 0 5px #cbcbc8;
+    /* filter: drop-shadow(0 0 5px white) */
     /* background-color: yellowgreen; */
 }
 
@@ -85,6 +92,12 @@ h1,h2,h3,h4,h5,h6{
     }
 } */
 
+sup{
+    font-family: var(--body-font);
+    color: var(--temp-color);
+    font-size: 0.5em;
+}
+
 #time-location{
     position: relative;
     margin-block-start: 1em;
@@ -94,6 +107,7 @@ h1,h2,h3,h4,h5,h6{
     position: absolute;
     left: 5%;
     top: 0;
+    padding-block-start: 0.5em;
     /* background-color: wheat; */
 }
 
@@ -101,6 +115,7 @@ h1,h2,h3,h4,h5,h6{
     position: absolute;
     right: 5%;
     top: 0;
+    padding-block-start: 0.5em;
     /* background-color: violet; */
 }
 
@@ -108,6 +123,7 @@ h1,h2,h3,h4,h5,h6{
     block-size: 25rem;
     inline-size: 100%;
     --gap: none;
+    margin-top: 0.5rem;
     /* background-color: var(--temp-color); */
     /* border-radius: 10px;
     background: rgba(211, 211, 211, 0.4);
@@ -116,8 +132,9 @@ h1,h2,h3,h4,h5,h6{
 
 .tab{
     border-radius: 10px;
-    outline: 1px solid;
+    /* outline: 1px solid; */
     outline-offset: 0.6em;
+    display: none;
 }
 
 /* ----------TEMPERATURE CONDITION------------ */
@@ -128,11 +145,11 @@ h1,h2,h3,h4,h5,h6{
 }
 
 #temp{
-    font-size: 5em;
+    font-size: 4.5em;
 }
 
 #condition{
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
 
 
@@ -149,7 +166,83 @@ h1,h2,h3,h4,h5,h6{
 
 #max-min{
     margin: auto;
-    --gap: 4em;
+    --gap: 2em;
     font-size: 1.2em;
     /* background-color: yellow; */
+}
+
+/* ---------------- Loading Bar --------------------- */
+
+#loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    /* background-color: #4df9ee; */
+}
+
+.loaders{
+    inline-size: 1em;
+    /* block-size: 1em; */
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.loaders:first-of-type{
+    background-color: crimson;
+    animation: load-one 2s infinite;
+}
+
+.loaders:nth-last-of-type(2){
+    background-color: gold;
+    animation: load-two 2s infinite;
+}
+
+.loaders:last-of-type{
+    background-color: seagreen;
+    animation: load-three 2s infinite;
+}
+
+@keyframes load-one {
+    0%{
+        background-color: crimson;
+    }
+
+    33.33%{
+        background-color: seagreen;
+    }
+
+    99%{
+        background-color: gold;
+    }
+}
+
+@keyframes load-two {
+    0%{
+        background-color: gold;
+    }
+
+    33.33%{
+        background-color: crimson;
+    }
+
+    99%{
+        background-color: seagreen;
+    }
+}
+@keyframes load-three {
+    0%{
+        background-color: seagreen;
+    }
+
+    33.33%{
+        background-color: gold;
+    }
+
+    99%{
+        background-color: crimson;
+    }
 }
