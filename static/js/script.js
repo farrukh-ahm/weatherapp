@@ -121,18 +121,18 @@ const displayCurrentMaxMin = (data) => {
     condition.innerText = `${data.current.condition.text}`
 
     feels.style.display = "initial"
-    feels.insertAdjacentHTML("beforeend", `${data.current.feelslike_c}<sup>o</sup>C`)
+    feels.insertAdjacentHTML("beforeend", `${data.current.feelslike_c} <sup>o</sup> C`)
 
     wind.style.display = "initial"
-    wind.insertAdjacentHTML("beforeend", `${data.current.wind_kph}kmph`)
+    wind.insertAdjacentHTML("beforeend", `${data.current.wind_kph} kmph`)
     // wind.innerText = `Wind: ${data.current.wind_kph}kmph`
 
-    maxMinContainer.style.display = "initial"
+    maxMinContainer.style.display = "flex"
     max.style.display = "initial"
-    max.innerHTML = `Max: ${data.forecast.forecastday[0].day.maxtemp_c}<sup>o</sup> C`
+    max.innerHTML = `Max: ${data.forecast.forecastday[0].day.maxtemp_c} <sup>o</sup> C`
 
     min.style.display = "initial"
-    min.innerHTML = `Min: ${data.forecast.forecastday[0].day.mintemp_c}<sup>o</sup> C`
+    min.innerHTML = `Min: ${data.forecast.forecastday[0].day.mintemp_c} <sup>o</sup> C`
 
 }
 
