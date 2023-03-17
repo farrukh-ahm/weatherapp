@@ -137,6 +137,10 @@ sup{
     display: none;
 }
 
+i {
+    padding: 0.25em;
+}
+
 /* ----------TEMPERATURE CONDITION------------ */
 
 #temp-container{
@@ -168,6 +172,10 @@ sup{
     margin: auto;
     --gap: 2em;
     font-size: 1.2em;
+    outline: 1px solid var(--text-color);
+    outline-offset: 1em;
+    border-radius: 999px;
+    display: none;
     /* background-color: yellow; */
 }
 

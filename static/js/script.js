@@ -6,6 +6,7 @@ let temp = document.getElementById("temp")
 let condition = document.getElementById("condition")
 let feels = document.getElementById("feels")
 let wind = document.getElementById("wind")
+let maxMinContainer = document.querySelector("#max-min")
 let max = document.getElementById("max")
 let min = document.getElementById("min")
 let loading = document.getElementById("loader")
@@ -120,11 +121,13 @@ const displayCurrentMaxMin = (data) => {
     condition.innerText = `${data.current.condition.text}`
 
     feels.style.display = "initial"
-    feels.innerHTML = `Feels Like: ${data.current.feelslike_c}<sup>o</sup>C`
+    feels.insertAdjacentHTML("beforeend", `${data.current.feelslike_c}<sup>o</sup>C`)
 
     wind.style.display = "initial"
-    wind.innerText = `Wind: ${data.current.wind_kph}kmph`
+    wind.insertAdjacentHTML("beforeend", `${data.current.wind_kph}kmph`)
+    // wind.innerText = `Wind: ${data.current.wind_kph}kmph`
 
+    maxMinContainer.style.display = "initial"
     max.style.display = "initial"
     max.innerHTML = `Max: ${data.forecast.forecastday[0].day.maxtemp_c}<sup>o</sup> C`
 
