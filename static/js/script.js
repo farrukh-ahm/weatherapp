@@ -30,7 +30,7 @@ const initiatePosition = () => {
     }
 
     else{
-        console.log("Not supported")
+        alert("Not supported")
     }    
 
 }
@@ -41,33 +41,12 @@ const getPosition = (location) =>{
     const lat = location.coords.latitude;
     const long = location.coords.longitude;
 
-    // console.log(lat, long)
-    // getWeather(lat, long)
     getCurrentMaxMin(lat, long)
 }
 
 
-// ------------- Get Data of Current Condition -------------
-// const getWeather = async (lat, long) =>{
 
-//     const response = await fetch (`https://api.weatherapi.com/v1/current.json?key=${keys.KEY}&q=${lat},${long}&aqi=no`)
-
-//     const data = await response.json()
-
-//     if(response.ok){
-
-//         displayWeather(data)
-//         console.log(data)
-//     }
-
-//     else{
-//         console.log(error)
-//     }
-
-// }
-
-
-// ---------------- Get Forecast Data ----------------
+// ---------------- Get Weather Data ----------------
 const getCurrentMaxMin = async (lat, long) => {
 
     const response = await fetch (`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${long}&days=3&aqi=no&alerts=no`)
@@ -75,9 +54,9 @@ const getCurrentMaxMin = async (lat, long) => {
     const data = await response.json()
 
     if(response.ok){
-        console.log(data)
-        console.log(data.forecast.forecastday[0].day.maxtemp_c)
-        console.log(data.forecast.forecastday[0].day.mintemp_c)
+        // console.log(data)
+        // console.log(data.forecast.forecastday[0].day.maxtemp_c)
+        // console.log(data.forecast.forecastday[0].day.mintemp_c)
         displayCurrentMaxMin(data)
     }
 
@@ -87,23 +66,6 @@ const getCurrentMaxMin = async (lat, long) => {
 
 }
 
-
-// ---------- Display Current Weather -----------
-// const displayWeather = (data) =>{
-
-//     conditionBackground(data.current.condition.code)
-
-//     loc.innerText = `${data.location.name}, ${data.location.country}`
-
-//     temp.innerHTML = `${data.current.temp_c}<sup>o</sup>C`
-
-//     condition.innerText = `${data.current.condition.text}`
-
-//     feels.innerHTML = `Feels Like: ${data.current.feelslike_c}<sup>o</sup>C`
-
-//     wind.innerText = `Wind: ${data.current.wind_kph}kmph`
-
-// }
 
 
 // ------------- Display Current and Max Min ---------------------
@@ -115,9 +77,10 @@ const displayCurrentMaxMin = (data) => {
 
     loc.innerText = `${data.location.name}, ${data.location.country}`
 
-    temp.innerHTML = `${data.current.temp_c} <sup>o</sup> C`
 
+    temp.innerHTML = `${data.current.temp_c} <sup>o</sup> C`
     condition.innerText = `${data.current.condition.text}`
+
 
     feels.style.display = "initial"
     feels.insertAdjacentHTML("beforeend", `${data.current.feelslike_c} <sup>o</sup> C`)
@@ -125,6 +88,7 @@ const displayCurrentMaxMin = (data) => {
     wind.style.display = "initial"
     wind.insertAdjacentHTML("beforeend", `${data.current.wind_kph} kmph`)
     // wind.innerText = `Wind: ${data.current.wind_kph}kmph`
+
 
     maxMinContainer.style.display = "flex"
     max.style.display = "initial"
@@ -150,16 +114,10 @@ function conditionBackground(code){
 
     for(let i of conditionCodes){
         if(Object.values(i)[0].includes(code)){
-            console.log(Object.keys(i)[0]);
+            // console.log(Object.keys(i)[0]);
             return bodyElement.style.backgroundImage = `url('../../../weatherapp/static/assets/${Object.keys(i)[0]}.jpg')`;
         }
     }
-
-    // document.querySelector("body").style.backgroundImage = `url(/assets/thunder.jpg)`
-    // for(let i of conditionCodes){
-    //     console.log(Object.values(i)[0])
-    //     }
-    // }
 
 }
 

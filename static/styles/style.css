@@ -14,9 +14,7 @@ html, body {
 
 :root{
     --temp-font: 'EB Garamond', serif;
-    /* --temp-color: #B50179; */
     --temp-color: #FFF5EE;
-    /* --body-font: 'Tilt Neon', cursive; */
     --body-font: 'News Cycle', sans-serif;
     --body-color: linear-gradient(
         to right, #b7e1e5, #aadfe3, 
@@ -30,7 +28,6 @@ html, body {
         #b5b8bf, #b8bec4, #bcc3c9, 
         #bfcacf, #c3d0d4, #c7d7d8, 
         #ccdddc);
-    /* --text-color: ##A93800; */
     --text-color: #FFFFFF;
     --condition-font: 'Quattrocento Sans', sans-serif;
     --body-wrapper: rgba(107, 105, 99, 0.2);
@@ -49,7 +46,6 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-    /* text-transform: capitalize; */
     color: var(--temp-color);
     font-family: var(--temp-font);
 }
@@ -74,11 +70,9 @@ h1,h2,h3,h4,h5,h6{
     inline-size: 100%;
     --gap: 2rem;
     border-radius: 10px;
-    /* background: rgba(211, 211, 211, 0.4); */
     background: var(--body-wrapper);
     backdrop-filter: blur(5px);
     box-shadow: 0 0 5px #cbcbc8, inset 0 0 5px #cbcbc8;
-    /* filter: drop-shadow(0 0 5px white) */
     /* background-color: yellowgreen; */
 }
 
@@ -88,11 +82,6 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
-/* @media (min-width: 800px){
-    #body-wrapper{
-        inline-size: 50%;
-    }
-} */
 
 sup{
     font-family: var(--body-font);
@@ -127,14 +116,10 @@ sup{
     --gap: none;
     margin-top: 0.5rem;
     /* background-color: var(--temp-color); */
-    /* border-radius: 10px;
-    background: rgba(211, 211, 211, 0.4);
-    backdrop-filter: blur(10px); */
 }
 
 .tab{
     border-radius: 10px;
-    /* outline: 1px solid; */
     outline-offset: 0.6em;
     display: none;
 }
@@ -166,11 +151,11 @@ sup{
     font-size: 1.2em;
 }
 
-#wind{
+/* #wind{
     position: relative;
     overflow-x: hidden;
-    /* background-color: yellow; */
-}
+    background-color: yellow;
+} */
 
 i {
     padding: 0.25em;
@@ -182,10 +167,6 @@ i {
 
 
 #windflow{
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    /* background-color: #4df9ee; */
     animation: wind 1s infinite alternate;
 }
 
@@ -210,7 +191,6 @@ i {
 #max-min{
     margin: auto;
     --gap: 2rem;
-    /* min-inline-size: 50%; */
     font-size: 1.2em;
     outline: 1px solid var(--text-color);
     outline-offset: 1em;
@@ -234,7 +214,6 @@ i {
 
 .loaders{
     inline-size: 1em;
-    /* block-size: 1em; */
     aspect-ratio: 1;
     border-radius: 50%;
 }
