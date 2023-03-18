@@ -152,7 +152,7 @@ function conditionBackground(code){
     for(let i of conditionCodes){
         if(Object.values(i)[0].includes(code)){
             console.log(Object.keys(i)[0])
-            document.querySelector("body").style.backgroundImage = `url(../../assets/${Object.keys(i)[0]}.jpg)`
+            document.querySelector("body").style.backgroundImage = `url(../assets/${Object.keys(i)[0]}.jpg)`
         }
     }
 
