@@ -8,4 +8,4 @@ The Weather App is created using [The Weather API](https://www.weatherapi.com/).
 - Planing to add the search feature so tha a user can search the weather of any city in the world.
 - Currently, the Api provides the forecast for only next two days on free plan, hence that feature hasn't been implemented here.
 
-![Preview of the app](./assets/preview.JPG)
+![Preview of the app](./static/assets/preview.jpg)

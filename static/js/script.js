@@ -10,6 +10,7 @@ let maxMinContainer = document.querySelector("#max-min")
 let max = document.getElementById("max")
 let min = document.getElementById("min")
 let loading = document.getElementById("loader")
+let bodyElement = document.querySelector("body")
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -150,7 +151,8 @@ function conditionBackground(code){
     for(let i of conditionCodes){
         if(Object.values(i)[0].includes(code)){
             console.log(Object.keys(i)[0]);
-            return document.body.style.backgroundImage = `url('../../static/assets/${Object.keys(i)[0]}.jpg')`;
+            bodyElement.style.backgroundImage = `url('../../static/assets/${Object.keys(i)[0]}.jpg')`;
+            break
         }
     }
 
