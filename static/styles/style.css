@@ -37,7 +37,7 @@ html, body {
 }
 
 body{
-    background-image: url(/assets/img.jpg);
+    background-image: url(../../assets/img.jpg);
     background-size: cover;
     background-position: center;
     font-family: var(--body-font);
