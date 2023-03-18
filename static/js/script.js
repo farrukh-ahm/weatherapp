@@ -151,8 +151,7 @@ function conditionBackground(code){
     for(let i of conditionCodes){
         if(Object.values(i)[0].includes(code)){
             console.log(Object.keys(i)[0]);
-            bodyElement.style.backgroundImage = `url('../../static/assets/${Object.keys(i)[0]}.jpg')`;
-            break
+            return bodyElement.style.backgroundImage = `url('../../../weatherapp/static/assets/${Object.keys(i)[0]}.jpg')`;
         }
     }
 
