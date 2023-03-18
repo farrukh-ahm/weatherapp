@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     setInterval(getTime, 100);
 
-    // console.log(conditionCodes[0].sunny)
+    console.log(data)
 
 })
 
@@ -71,7 +71,7 @@ const getPosition = (location) =>{
 // ---------------- Get Forecast Data ----------------
 const getCurrentMaxMin = async (lat, long) => {
 
-    const response = await fetch (`https://api.weatherapi.com/v1/forecast.json?key=${keys.KEY}&q=${lat},${long}&days=3&aqi=no&alerts=no`)
+    const response = await fetch (`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${lat},${long}&days=3&aqi=no&alerts=no`)
 
     const data = await response.json()
 
