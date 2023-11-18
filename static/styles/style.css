@@ -85,7 +85,7 @@ input{
     border: 1px solid #cbcbc8;
     border-radius: 5px;
     padding: 5px;
-    color: #585856;
+    color: white;
     font-size: medium;
     /* box-shadow: none; */
 }
@@ -93,7 +93,8 @@ input{
 input:focus{
 
     border: 1px solid #cbcbc8;
-    filter: drop-shadow(0 0 2px #cbcbc8);
+    box-shadow: 0 0 2px #cbcbc8;
+    /* filter: drop-shadow(0 0 2px #cbcbc8); */
     outline: none;
 
 }
