@@ -43,6 +43,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 0.5em;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -65,8 +66,59 @@ h1,h2,h3,h4,h5,h6{
 
 /* ----------------------------- */
 
+
+.search-bar{
+
+    margin-inline: auto;
+    inline-size: 100%;
+    block-size: 3rem;
+    /* background-color: crimson; */
+
+}
+
+input{
+
+    inline-size: 15rem;
+    block-size: 90%;
+    background: rgba(107, 105, 99, 0.2);
+    /* filter: blur(5px); */
+    border: 1px solid #cbcbc8;
+    border-radius: 5px;
+    padding: 5px;
+    color: #585856;
+    font-size: medium;
+    /* box-shadow: none; */
+}
+
+input:focus{
+
+    border: 1px solid #cbcbc8;
+    filter: drop-shadow(0 0 2px #cbcbc8);
+    outline: none;
+
+}
+
+button{
+
+    inline-size: 8rem;
+    block-size: 90%;
+    background-color: rgba(207, 205, 199, 0.2);
+    border: 1px solid #cbcbc8;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+}
+
+button:hover, button:focus{
+
+    box-shadow: 0 0 5px #cbcbc8;
+
+}
+
 #body-wrapper{
-    margin: auto;
+    margin-inline: auto;
     inline-size: 100%;
     --gap: 2rem;
     border-radius: 10px;
@@ -78,6 +130,10 @@ h1,h2,h3,h4,h5,h6{
 
 @media (min-width: 500px){
     #body-wrapper{
+        inline-size: 30rem;
+    }
+
+    .search-bar{
         inline-size: 30rem;
     }
 }
